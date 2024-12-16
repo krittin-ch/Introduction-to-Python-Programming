@@ -8,3 +8,4 @@ Solution-*.pdf
 *.log
 *.synctex.gz
 *.tex
+*.out
