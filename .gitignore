@@ -2,7 +2,7 @@ Assignment-*.pdf
 !Assignment-[1-1].pdf
 
 Solution-*.pdf
-# !Solution-[1-1].pdf
+!Solution-[1-1].pdf
 
 *.aux
 *.log
