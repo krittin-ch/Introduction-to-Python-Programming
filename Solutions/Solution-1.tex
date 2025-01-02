@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\geometry{a4paper, margin=1in}
+
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    tabsize=4,
+    upquote=true
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{Solution 1: Statements}
+\end{center}
+
+
+\section*{Part 2: Variables and Naming Rules}
+
+\subsection*{Task 2}
+Identify the errors in the following variable assignments and correct them:
+
+\begin{lstlisting}[language=Python]
+# Incorrect code:
+1name = "Alice"       # Variable name starts with a number.
+def = "Reserved"      # Using a reserved keyword.
+user-name = "John"    # Hyphens are not allowed in variable names.
+
+# Corrected code:
+name1 = "Alice"             # Variable name starts with a letter.
+reserved_word = "Reserved"  # Avoid reserved keywords.
+user_name = "John"          # Use underscores instead of hyphens.
+\end{lstlisting}
+
+\section*{Part 3: String Basics}
+
+\subsection*{Task 3}
+Write a Python program to demonstrate the use of quotation marks, string length, and concatenation.
+
+\begin{lstlisting}[language=Python]
+# Quotation marks:
+single_quote = 'This is a string.'
+double_quote = "This is also a string."
+
+# String length:
+message = "Hello, Python!"
+print(len(message))  # Output: 13
+
+# String concatenation:
+first_name = "Alice"
+last_name = "Johnson"
+full_name = first_name + " " + last_name
+print(full_name)  # Output: Alice Johnson
+\end{lstlisting}
+
+\newpage
+
+\section*{Part 4: Number Basics}
+
+\subsection*{Task 4}
+Write a Python program to demonstrate data types, basic arithmetic operations, and order of precedence.
+
+\begin{lstlisting}[language=Python]
+# Data types:
+integer_number = 10
+float_number = 5.5
+print(type(integer_number))  # Output: <class 'int'>
+print(type(float_number))    # Output: <class 'float'>
+
+# Basic arithmetic operations:
+addition = 5 + 3
+subtraction = 10 - 4
+multiplication = 7 * 6
+division = 15 / 3
+
+print(addition, subtraction, multiplication, division)  # 8 6 42 5.0
+
+# Order of precedence:
+# Exponentiation -> Multiplication -> Addition -> Subtraction
+result = 5 + 2 * 3 ** 2 - 1  
+print(result)  # Output: 22
+\end{lstlisting}
+
+\section*{Part 5: Error Handling}
+
+\subsection*{Task 5}
+Explain what an error is, identify which line of code contains an error, and provide a solution.
+
+\subsubsection*{Task 5.1: Syntax Error}
+\begin{lstlisting}[language=Python]
+# Incorrect code:
+print("Hello World!"  # Missing closing parenthesis
+
+# Explanation:
+# A SyntaxError occurs because the closing parenthesis is missing on line 2.
+
+# Corrected code:
+print("Hello World!")
+\end{lstlisting}
+
+\subsubsection*{Task 5.2: NameError}
+\begin{lstlisting}[language=Python]
+# Incorrect code:
+print(variable)  # 'variable' is not defined
+variable = 5
+
+# Explanation:
+# A NameError occurs because 'variable' has not been defined before use on line 2.
+
+# Corrected code:
+variable = 5
+print(variable)
+\end{lstlisting}
+
+\subsubsection*{Task 5.3: ZeroDivisionError}
+\begin{lstlisting}[language=Python]
+# Incorrect code:
+result = 10 / 0  # Division by zero is not allowed
+
+# Explanation:
+# A ZeroDivisionError occurs because a number divided by zero on line 2.
+
+# Corrected code:
+result = 10 / 2  # Use a non-zero divisor
+print(result)
+\end{lstlisting}
+
+\subsubsection*{Task 5.4: TypeError}
+\begin{lstlisting}[language=Python]
+# Incorrect code:
+# input() always return a string
+# int() is used to convert to 'int'
+x = int(input("Please enter a number from 1-10: ")) 
+print("Your input is ", x)          # x = 3
+
+y = input("Please enter your second number from 1-10: ")
+print("Your second number is ", y)  # y = 5
+print()
+
+print("The sum of two numbers is x" + y)
+# The sum of two numbers is x 5
+print("The product of two numbers is ", x * y)
+"""
+Traceback (most recent call last):
+  File "c:\Users\kritt\Desktop\mana\temp_1.py", line 10, in <module>
+    print("The product of two numbers is ", x * y)
+                                            ~~^~~
+TypeError: can't multiply sequence by non-int of type 'str
+"""
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+# Corrected code:
+# input() always return a string
+# int() is used to convert to 'int'
+x = int(input("Please enter a number from 1-10: ")) 
+print("Your input is ", x)          # x = 3
+
+y = int(input("Please enter your second number from 1-10: ")) # Add int()
+print("Your second number is ", y)  # y = 5
+print()
+
+# remove 'x' from the string, and add with 'y'
+print("The sum of two numbers is ", x + y) 
+# The sum of two numbers is 8
+print("The product of two numbers is ", x * y) 
+# The product of two numbers is 15
+\end{lstlisting}
+
+
+\end{document}
