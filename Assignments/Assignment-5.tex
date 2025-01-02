@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    tabsize=4,
+    upquote=true
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{Assignment 5: Decisions}
+\end{center}
+
+\section*{Task 1: Grading System}
+A professor needs to grade his students using Python if-elif-else statements.
+Given the grading criteria: A (> 80) B (70 - 80) C (60 - 70) D (50 - 60) F (< 50).\\
+If a student receives an F, but their assignment score is greater than 25, the student is given a chance to take a retest.\\
+
+\noindent
+Construct a Python program that accepts two integer inputs: test score (not more than 60) and assignment score (not more than 40). The program should print the student's grade, total score, and indicate if the student needs a retest.
+
+
+
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{3cm}
+\end{tcolorbox}    
+
+
+\section*{Task 2: Pythagoras Theorem}
+
+The program accepts three inputs: \texttt{a}, \texttt{b}, and \texttt{c}, 
+which represent the sides of a triangle. 
+It checks whether these numbers can form a valid triangle. 
+If they can, the program further checks if the triangle satisfies 
+the Pythagorean theorem, indicating that it is a right triangle.
+
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{3cm}
+\end{tcolorbox} 
+
+
+\end{document}
