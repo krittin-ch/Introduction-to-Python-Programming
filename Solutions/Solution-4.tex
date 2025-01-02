@@ -1,0 +1,149 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{upquote}
+
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    tabsize=4,
+    upquote=true
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{Solution 4: Objects}
+\end{center}
+
+\section*{Questions}
+
+\begin{enumerate}
+    \item {
+        What are \texttt{id()} and \texttt{type()}?
+        \begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+            \texttt{id()} and \texttt{type()} are a built-in function. While \texttt{id()} returns an unqiue integer, representing the memory address of the object, \texttt{type()} returns the class which the object belongs to.
+        \end{tcolorbox}
+    }
+    \item {
+        Given the code \verb|print("Hello,\tI'm Mana.\nI want to be a \"demon slayer\".")|\\
+        What does it print?
+
+\begin{lstlisting}[language=Python]
+print("Hello,\tI\'m Mana.\nI want to be a \"demon slayer\".")
+
+# Hello,  I'm Mana.
+# I want to be a "demon slayer".
+\end{lstlisting}
+                
+    }
+    \item {
+        Consider the following program:
+
+\begin{lstlisting}[language=Python]
+s = chr(85) + 2*chr(73) + chr(65) + chr(32)
+n = ord("~") - ord("x")
+
+new_s = n * s
+print(f"The new sentence is {new_s}")
+\end{lstlisting}
+    \noindent
+    What is its output?
+    \begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+        The program prints: \verb|The new sentence is UIIA UIIA UIIA UIIA UIIA UIIA|
+    \end{tcolorbox}
+    }
+    \item {
+        Given \verb|s = "Minecraft"|, what is the value and type of \verb|ord(s[1])|?
+        \begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+            The value of \verb|ord(s[1])| is \verb|'i'|, and its type is \verb|<class 'str'>|, which is of type string.
+        \end{tcolorbox}    
+    }
+\end{enumerate}
+
+\section*{Task 1: Formating Output}
+Professor John want to estimate the Euler's number using limit definition:
+
+\[ e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n} \right) ^ n \]
+
+\noindent
+As \(n\) approches infinity, he assigns \(n = 5 \times 10^3\) and wants to print its value formatted with 3 total digits 
+before the decimal point and 5 digits after the decimal point, padded accordingly. What is the value that he print?
+
+\begin{lstlisting}[language=Python]
+n = 5e3 # n = 5 x 10^3
+e = (1 + 1/n) ** n
+
+print(f'The Euler\'s Number is {e:09.5f} when n = {int(n):,d}')
+# The Euler's Number is 02.71801 when n = 5,000
+\end{lstlisting}
+
+\section*{Task 2: Lists and Tuples}
+\subsection*{Task 2.1: Lists}
+Consider the following program:
+
+\begin{lstlisting}[language=Python]
+num_list = [1, 2, "Tanjiro", 4, 5]
+
+x = num_list[0] + num_list[-1]
+y = num_list[1] + num_list[-2]
+num_list[2] = x - y
+
+print(f"x - y = {num_list[2]}")
+\end{lstlisting}
+
+\noindent
+What is the program output?
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    The program shows \verb|x - y = 0|, which is the new value of the second index of \verb|num_list|.
+\end{tcolorbox}    
+
+\clearpage
+
+\subsection*{Task 2.2: Tuples}
+Consider the following program:
+
+\begin{lstlisting}[language=Python]
+num_list = (1, 2, "Nezuko", 4, 5)
+
+x = num_list[0] + num_list[-1]
+y = num_list[1] + num_list[-2]
+num_list[2] = x - y
+
+print(f"x - y = {num_list[2]}")
+\end{lstlisting}
+
+\noindent
+What is the program output? Discuss the result.
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    The program could not execute, and raised the following error:\\
+    \verb|TypeError: 'tuple' object does not support item assignment|\\
+    This error represent the immutable property of the tuple data type.
+\end{tcolorbox} 
+
+\subsection*{Task 2.3: List and Tuple Applications}
+Why are tuples important, even though they are immutable? Additionally, when should we use a tuple instead of a list?
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    Tuple is an \textbf{ordered}, \textbf{immutable} collection of elements, unlike list which is \textbf{mutable}.  
+    This property offers \textbf{data integrity} ensuring data consistency which can be applied in banking industries.
+    Additionally, due to the mutability of the list data type, its memory alocation is dynamic meaning that it is changable. This may cause extra \textbf{time complexity}, which may, in turn, make the system slower.
+\end{tcolorbox} 
+
+\end{document}
