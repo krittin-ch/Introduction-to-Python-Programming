@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    tabsize=4,
+    upquote=true
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{Assignment 2: Simple Application of Statements}
+\end{center}
+
+\section*{Task 1: BMI Calculator}
+Write a Python program that asks the user for their name, height, and weight, then calculate and print the BMI value with the user's name.
+
+\begin{lstlisting}[language=Python]
+name = input("Enter your name: ")
+height = input("Enter your height: ")
+weight = input("Enter your weight: ")
+
+# BMI Calculation
+BMI = . . .
+
+print(f"Hello {name}! Your BMI is {BMI}.")
+\end{lstlisting}
+
+\section*{*Task 2: Combination Calculation (\(\mathbf{C_r^n = \frac{n!}{(n-r)!r!}}\))}
+Define \(C_r^n\) as number of ways to choose r items from n items without repetition and without order.
+The task is to assign two inputs: \(n\) and \(r\), and use math library (see url attached) to compute the associated combination.
+url: \url{https://docs.python.org/3/library/math.html#}
+
+\begin{lstlisting}[language=Python]
+# Import library 
+import math
+
+n = input("n = ")
+r = input("r = ")
+
+# The rest is to be implemented
+\end{lstlisting}
+
+
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{5cm}
+\end{tcolorbox}
+
+\section*{*Task 3: Acid-Base Calculation}
+2 L of solution of \(5 \times 10^-3\) M HCL and \(3 \times 10^-3\) M AgNO\(_3\) mixing together. Calculate the followings:
+\begin{enumerate}
+    \item pH of the solution
+    \item Mass of precipitation
+    \item Mass of pure water (without HCL and AgNO\(_3\)) 
+\end{enumerate}
+
+\begin{lstlisting}[language=Python]
+# Import library 
+import math
+
+HCL_M = 5e-3    # equals to 5 * 10**-3
+AgNO3_M = 3e-3  # equals to 3 * 10**-3
+V = 2           # 2 L of water
+
+total_H = ...       # total_H is used to find pH of the solution
+precipitation = ... # What is this compound?
+
+\end{lstlisting}
+
+
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{5cm}
+\end{tcolorbox}
+
+\end{document}
