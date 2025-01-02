@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    tabsize=4,
+    upquote=true
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{Solution 5: Decisions}
+\end{center}
+
+\section*{Task 1: Grading System}
+A professor needs to grade his students using Python if-elif-else statements.
+Given the grading criteria: A (> 80) B (70 - 80) C (60 - 70) D (50 - 60) F (< 50).\\
+If a student receives an F, but their assignment score is greater than 25, the student is given a chance to take a retest.\\
+
+\noindent
+Construct a Python program that accepts two integer inputs: test score (not more than 60) and assignment score (not more than 40). The program should print the student's grade, total score, and indicate if the student needs a retest.
+
+\begin{lstlisting}[language=Python]
+test_score = int(input("Test Score: "))
+assignment_score = int(input("Assignment Score: "))
+
+if test_score > 60: 
+    print(f"Test score is {test_score}. It should not more than 60")
+elif assignment_score > 40: 
+    print(f"Assignment score is {assignment_score}. It should not more than 40")
+else:
+    pass
+
+total_score = test_score + assignment_score
+
+if_retest = False
+
+if total_score > 80:
+    grade = "A"
+elif 80 >= total_score > 70:
+    grade = "B"
+elif 70 >= total_score > 60:
+    grade = "C"
+elif 60 >= total_score > 50:
+    grade = "D"
+else:
+    grade = "F"
+    if assignment_score > 25:
+        if_retest = True
+    else:
+        pass
+
+print(f"The student's grade is {grade} \
+      with a total score of {total_score}. \
+      Retest required: {if_retest}.")
+\end{lstlisting}
+
+\noindent
+Note that the program continues to run until the end, as it is not designed to handle errors.
+
+\clearpage
+\section*{Task 2: Pythagoras Theorem}
+
+The program accepts three inputs: \texttt{a}, \texttt{b}, and \texttt{c}, 
+which represent the sides of a triangle. 
+It checks whether these numbers can form a valid triangle. 
+If they can, the program further checks if the triangle satisfies 
+the Pythagorean theorem, indicating that it is a right triangle.\\
+
+\begin{lstlisting}[language=Python]
+a = float(input("Side 1: "))
+b = float(input("Side 2: "))
+c = float(input("Side 3: "))
+
+# Find largest side
+max_length = max(a, b, c)
+
+if max_length == a:
+    s_1 = b 
+    s_2 = c
+elif max_length == b:
+    s_1 = a
+    s_2 = c
+else:
+    s_1 = a
+    s_2 = b
+
+if not s_1 + s_2 > max_length:
+    print(f"Impossible to construct a triangle.")
+else:
+    print(f"Possible to construct a triangle.")
+
+if max_length**2 == s_1**2 + s_2**2:
+    print("The triangle is a right-angled triangle.")
+else:
+    print("The triangle is not a right-angled triangle.")
+
+\end{lstlisting}
+
+\end{document}
