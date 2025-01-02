@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    tabsize=4,
+    upquote=true
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{Assignment 4: Objects}
+\end{center}
+
+\section*{Questions}
+
+\begin{enumerate}
+    \item {
+        What are \texttt{id()} and \texttt{type()}?
+        \begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+            \vspace{2.5cm}
+        \end{tcolorbox}
+    }
+    \item {
+        Given the code \verb|print("Hello,\tI\'m Mana.\nI want to be a \"demon slayer\".")|\\
+        What does it print?
+
+        \begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+            \vspace{2.5cm}
+        \end{tcolorbox}
+    }
+    \item {
+        Consider the following program:
+
+\begin{lstlisting}[language=Python]
+s = chr(85) + 2*chr(73) + chr(65) + chr(32)
+n = ord("~") - ord("x")
+
+new_s = n * s
+print(f"The new sentence is {new_s}")
+\end{lstlisting}
+\noindent
+    What is its output?
+    \begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+        \vspace{2.5cm}
+    \end{tcolorbox}
+    }
+    \item {
+        Given \verb|s = "Minecraft"|, what is the value and type of \verb|ord(s[1])|?
+        \begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+            \vspace{2.5cm}
+        \end{tcolorbox}    
+    }
+\end{enumerate}
+
+\section*{Task 1: Formating Output}
+Professor John want to estimate the Euler's number using limit definition:
+
+\[ e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n} \right) ^ n \]
+
+\noindent
+As \(n\) approches infinity, he assigns \(n = 5 \times 10^3\) and wants to print its value formatted with 3 total digits 
+before the decimal point and 5 digits after the decimal point, padded accordingly. What is the value that he print?
+
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{3cm}
+\end{tcolorbox}    
+
+
+\section*{Task 2: Lists and Tuples}
+\subsection*{Task 2.1: Lists}
+Consider the following program:
+
+\begin{lstlisting}[language=Python]
+num_list = [1, 2, "Tanjiro", 4, 5]
+
+x = num_list[0] + num_list[-1]
+y = num_list[1] + num_list[-2]
+num_list[2] = x - y
+
+print(f"x - y = {num_list[2]}")
+\end{lstlisting}
+
+\noindent
+What is the program output?
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{3cm}
+\end{tcolorbox}    
+
+\clearpage
+
+\subsection*{Task 2.2: Tuples}
+Consider the following program:
+
+\begin{lstlisting}[language=Python]
+num_list = (1, 2, "Nezuko", 4, 5)
+
+x = num_list[0] + num_list[-1]
+y = num_list[1] + num_list[-2]
+num_list[2] = x - y
+
+print(f"x - y = {num_list[2]}")
+\end{lstlisting}
+
+\noindent
+What is the program output? Discuss the result.
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{3cm}
+\end{tcolorbox} 
+
+\subsection*{Task 2.3: List and Tuple Applications}
+Why are tuples important, even though they are immutable? Additionally, when should we use a tuple instead of a list?
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{3cm}
+\end{tcolorbox} 
+
+\end{document}
