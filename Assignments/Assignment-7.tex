@@ -1,0 +1,90 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    tabsize=4,
+    upquote=true
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{Assignment 7: Functions}
+\end{center}
+
+\section*{Task 1: Cylinder Volume Function}
+
+\section*{Task 1.1: Cylinder Volume Function Using List}
+Create a function which accepts two list inputs: \texttt{radius} and \texttt{height}, having the same length and same index for same correspoind
+
+\begin{lstlisting}[language=Python]
+def calculate_cylinder_volume(radius: list, height: list):
+    # check if all elements in input list are numbers, and lists have the same length8
+    # volume[i] = pi * (radius[i]**2) * height[i]
+
+    return volume
+\end{lstlisting}
+
+\section*{Task 1.2: Cylinder Volume Function Using NumPy Array}
+Please see \href{https://numpy.org/doc/stable/user/absolute_beginners.html}{NumPy Array} for the tutorial and instruction to using NumPy array.
+
+\noindent
+Try to implement using \texttt{NumPy} library, and compare \texttt{Task 1.1} and \texttt{Task 1.2} run time with \texttt{time} library.
+
+\begin{lstlisting}[language=Python]
+import time
+
+start_time = time.time()
+
+# program runs
+
+end_time = time.time()
+
+print(f"Run Time: {end_time - start_time} seconds")
+\end{lstlisting}
+
+\section*{Task 2: Derivative Function}
+Create two functions, the first one accepts input \texttt{x} and return output \texttt{y}, and another function accepts two inputs: \texttt{x} and the first function to estimate slope.
+
+\begin{lstlisting}[language=Python]
+def function(x):
+    y = x**2    # can be defined as others
+    
+    return y
+
+def calculate_derivative(x, function):
+    # calculate slope
+    # m = delta_y / delta_x
+
+    return m
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{3cm}
+\end{tcolorbox} 
+
+
+\end{document}
