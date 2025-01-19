@@ -42,7 +42,7 @@ Create a function which accepts two list inputs: \texttt{radius} and \texttt{hei
 
 \begin{lstlisting}[language=Python]
 def calculate_cylinder_volume(radius: list, height: list):
-    # check if all elements in input list are numbers, and lists have the same length8
+    # check if all elements in input list are numbers, and lists have the same length
     # volume[i] = pi * (radius[i]**2) * height[i]
 
     return volume
@@ -66,16 +66,17 @@ end_time = time.time()
 print(f"Run Time: {end_time - start_time} seconds")
 \end{lstlisting}
 
+
 \section*{Task 2: Derivative Function}
 Create two functions, the first one accepts input \texttt{x} and return output \texttt{y}, and another function accepts two inputs: \texttt{x} and the first function to estimate slope.
 
 \begin{lstlisting}[language=Python]
-def function(x):
+def func(x):
     y = x**2    # can be defined as others
     
     return y
 
-def calculate_derivative(x, function):
+def calculate_derivative(x, func):
     # calculate slope
     # m = delta_y / delta_x
 
@@ -86,5 +87,24 @@ def calculate_derivative(x, function):
     \vspace{3cm}
 \end{tcolorbox} 
 
+\section*{Task 3: Integration Function}
+Create two functions, the first one accepts input \texttt{x} and return output \texttt{y}, and another function accepts two inputs: \texttt{x} and the first function to area under curve.
+
+\begin{lstlisting}[language=Python]
+def func(x):
+    y = x**2    # can be defined as others
+    
+    return y
+
+def calculate_integration(x, func):
+    # calculate slope
+    # delta_s = func(x) * delta_x
+
+    return S
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=black!10!white, colframe=black!75!white, title=\textbf{Answer}]
+    \vspace{3cm}
+\end{tcolorbox} 
 
 \end{document}
