@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    tabsize=4,
+    upquote=true
+}
+
+\begin{document}
+
+\begin{center}
+    \Large{Solution 8: Revision from Chapter 1 to 6}
+\end{center}
+
+\section*{Task 1: List Set Operation}
+Implement union and intersection operation by creating a function, using list data structure.
+
+\begin{lstlisting}[language=Python]
+def union_list(list_1, list_2):
+    # list_1 union list_2
+
+    union_list = list_2.copy()
+    for i in list_1:
+        if i in list_2:
+            continue
+            union_list.append(i)
+    
+    return union_list
+
+def intersection_list(list_1, list_2):
+    # list_1 intersect list_2
+
+    intersect_list = []
+
+    for i in list_1:
+        if i in list_2:
+            intersect_list.append(i)
+    
+    return intersect_list
+\end{lstlisting}
+
+
+\section*{Task 2: Masking Elements}
+Create a function that accepts a list of integer input and creates a new list that mark \texttt{True} if that element is less than 15 but more than 5 and \texttt{False} if not.
+
+\begin{lstlisting}[language=Python]
+def masking_list(ls):
+    """
+    if ...:
+        mask[i] = True
+    else:
+        mask[i] = False
+    """
+
+    mask = [i > 5 and i < 15 for i in ls]
+
+    return mask
+\end{lstlisting}
+
+\section*{Task 3: Arc Length}
+Define arc length \(s\):
+\[
+\begin{aligned}
+    s &= \sqrt{(dx)^2 + (dy)^2}\\
+    &= \sqrt{(dx)^2 \cdot \left(1 + \left(\frac{dy}{dx} \right)^2 \right)}\\
+    \therefore \hspace{0.3cm} s &= \sqrt{1 + \left(\frac{dy}{dx} \right)^2} \cdot dx
+\end{aligned}
+\]
+
+We can conclude that small arc length \(s\) is the sum of  \(\sqrt{1 + \text{slope}^2}\) times \(\Delta x\).
+
+That is,
+\[
+\begin{aligned}
+    S &= \int_a^b \sqrt{1 + \left( \frac{dy}{dx} \right)^2} dx \\
+    &= \sum_{x=a}^b \sqrt{1 + \left( \frac{\Delta y}{ \Delta x} \right)^2} \cdot \Delta x \; ; \text{ for very small step size } h
+\end{aligned}
+\]
+
+\begin{lstlisting}[language=Python]
+import math
+
+def func(x):
+    y = x**2
+
+    return y
+
+def find_slope(x, h, func):
+    delta_y = func(x + h) - func(x)
+    delta_x = h
+
+    m = delta_y / delta_x
+
+    return m, h
+
+def delta_arc_length(x, h, func):
+    slope = find_slope(x, h, func)
+
+    delta_s = math.sqrt(1 + slope**2) * h
+
+    return delta_s
+
+def arc_length(a, b, func):
+    h = 0.01
+
+    S = 0
+    for i in range(a, b, h):
+        S += delta_arc_length(i, h, func)
+
+    return S
+    
+\end{lstlisting}
+
+\end{document}
