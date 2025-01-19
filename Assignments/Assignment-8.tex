@@ -63,9 +63,10 @@ def masking_list(ls):
         mask[i] = False
     """
 
-    return intersect_list
+    return mask
 \end{lstlisting}
 
+\noindent
 Compare the result with NumPy library.
 
 \begin{lstlisting}[language=Python]
@@ -106,8 +107,8 @@ def function(x):
     return y
 
 def find_slope(x, function):
-    h = 0.0001
-    m = ... 
+    h = 0.01
+    # m = ... 
 
     return m
 
